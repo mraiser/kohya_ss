@@ -21,5 +21,6 @@ stdenv.mkDerivation {
   shellHook = ''
     SOURCE_DATE_EPOCH=$(date +%s)
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}
+    export XLA_FLAGS=--xla_gpu_cuda_data_dir=${pkgs.cudatoolkit_11}
   '';
 }
